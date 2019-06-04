@@ -121,7 +121,7 @@ def all_builds_filter(request):
         else:
             builds = BuildHistory.objects.filter(status=status, builder_name__name=builder).order_by('-time_start')
 
-        paginated_builds = Paginator(builds, 100)
+        paginated_builds = Paginator(builds, 30)
         try:
             result = paginated_builds.get_page(page)
         except PageNotAnInteger:
