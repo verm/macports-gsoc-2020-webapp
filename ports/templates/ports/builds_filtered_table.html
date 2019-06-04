@@ -1,4 +1,3 @@
-{% load unix_to_time %}
 
 <h4 class="text-secondary">Showing {% if status == "All Builds" %} <ins>All Builds</ins> {% else %}builds with status: <ins>{{ status }}</ins>{% endif %} on <ins>{{ builder }}</ins></h4>
 
@@ -59,8 +58,8 @@
             <td><a href="/ports/{{ build.port_name }}">{{ build.port_name }}</a></td>
             <td>{{ build.builder_name.name }}</td>
             <td><a href="{{ build.build_url }}">{{ build.build_id }}</a></td>
-            <td>{{ build.time_start|unix_to_time|date:"H:i | d M, Y" }} </td>
-            <td>{{ build.time_elapsed|unix_to_delta }}</td>
+            <td>{{ build.time_start }} </td>
+            <td>{{ build.time_elapsed }}</td>
             <td><a href="{{ build.watcher_url }}">{{ build.watcher_id }}</a></td>
             <td class="{% if build.status == 'build successful' %}text-success {% else %} text-danger {% endif %}">{{ build.status }}</td>
         </tr>
