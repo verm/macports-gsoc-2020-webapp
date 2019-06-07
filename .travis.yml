@@ -1,0 +1,25 @@
+language: python
+python:
+  - "3.6"
+  - "3.7"
+# setup environment
+env:
+  - DJANGO_VERSION=2.1.7
+  - DJANGO_VERSION=2.2
+  - DJANGO_SETTINGS_MODULE='MacPorts.settings'
+# install dependencies
+install:
+  - pip install -r requirements.txt
+
+# run test scripts
+script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py collectstatic
+  - python manage.py test
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database mp;' -U postgres
