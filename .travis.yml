@@ -23,7 +23,8 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py collectstatic
-  - python manage.py test
+  - coverage run --source=. manage.py test ports
+  - coverage report
 
 services:
   - postgresql
