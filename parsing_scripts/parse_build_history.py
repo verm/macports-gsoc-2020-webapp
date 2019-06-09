@@ -18,7 +18,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MacPorts.settings")
 django.setup()
 
 
-builders = Builder.objects.values_list('name', flat=True)
+builders = ['10.9_x86_64']
 url_prefix = 'https://build.macports.org'
 
 
@@ -109,7 +109,7 @@ def fetch():
         if build_number_loaded:
             build_in_database = build_number_loaded[0].build_id + 1
         else:
-            build_in_database = last_build_number - 200
+            build_in_database = last_build_number - 9999
 
         # lets start with the latest four builds
 
