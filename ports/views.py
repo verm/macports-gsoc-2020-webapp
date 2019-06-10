@@ -107,6 +107,13 @@ def all_builds_view(request):
     })
 
 
+def all_builds_no_filter(request):
+    builds = BuildHistory.objects.all()[:100]
+    return render(request, 'ports/test.html',{
+        'builds': builds
+    })
+
+
 def all_builds_filter(request):
     if request.method == 'GET':
         builder = request.GET['builder_name__name']

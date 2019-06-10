@@ -36,5 +36,6 @@ urlpatterns = [
     path('ports/sort-by-letter/<slug:letter>', views.letterlist, name='letter_list'),
     path('ports/all_builds/filter/', views.all_builds_filter),
     path('ports/all_builds/', views.all_builds_view, name='all_builds'),
+    path('ports/all_builds_no_filter/', views.all_builds_no_filter),
     path('update/', views.update_api, name='update_api')
 ]

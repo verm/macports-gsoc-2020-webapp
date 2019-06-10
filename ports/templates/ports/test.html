@@ -1,0 +1,28 @@
+{% extends 'ports/layout.html' %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Port</th>
+        <th scope="col">Builder</th>
+        <th scope="col">Build Number</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">Elapsed Time</th>
+        <th scope="col">Watcher</th>
+        <th scope="col">Build Status</th>
+    </tr>
+    </thead>
+    {% for build in builds %}
+        <tr>
+            <td><a href="/ports/{{ build.port_name }}">{{ build.port_name }}</a></td>
+            <td>{{ build.builder_name.name }}</td>
+            <td><a target="_blank" href="{{ build.build_url }}">{{ build.build_id }}</a></td>
+            <td>{{ build.time_start }} </td>
+            <td>{{ build.time_elapsed|time:"H:i:s" }}</td>
+            <td><a target="_blank" href="{{ build.watcher_url }}">{{ build.watcher_id }}</a></td>
+            <td class="{% if build.status == 'build successful' %}text-success {% else %} text-danger {% endif %}">{{ build.status }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
