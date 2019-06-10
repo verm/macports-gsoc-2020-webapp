@@ -108,13 +108,13 @@ def all_builds_view(request):
 
 
 def all_builds_filter(request):
-    if request.method == 'POST':
-        builder = request.POST['builder_name__name']
-        status = request.POST['status']
-        port_name = request.POST['port_name']
-        page = request.POST['page']
+    if request.method == 'GET':
+        builder = request.GET['builder_name__name']
+        status = request.GET['status']
+        port_name = request.GET['port_name']
+        page = request.GET['page']
 
-        builds = BuildHistoryFilter(request.POST, queryset=BuildHistory.objects.all().order_by('-time_start')).qs
+        builds = BuildHistoryFilter(request.GET, queryset=BuildHistory.objects.all().order_by('-time_start')).qs
 
         paginated_builds = Paginator(builds, 100)
         try:
