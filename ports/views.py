@@ -9,6 +9,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db import connection
 
 from parsing_scripts import update
 from .models import Port, Category, BuildHistory, Maintainer, Dependency, Builder, User, Variant, OSDistribution
@@ -156,7 +157,7 @@ def all_builds_filter(request):
         result = paginated_builds.get_page(1)
     except EmptyPage:
         result = paginated_builds.get_page(paginated_builds.num_pages)
-
+    print(connection.queries)
     return render(request, 'ports/ajax-filters/builds_filtered_table.html', {
         'builds': result,
         'builder': builder,
