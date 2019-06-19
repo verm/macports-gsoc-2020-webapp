@@ -130,8 +130,7 @@ def portdetail_stats(request):
 
 
 def all_builds_view(request):
-    builders = list(Builder.objects.all().values_list('name', flat=True))
-    builders.sort(key=LooseVersion, reverse=True)
+    builders = Builder.objects.all()
 
     return render(request, 'ports/all_builds.html', {
         'builders': builders,
@@ -139,14 +138,18 @@ def all_builds_view(request):
 
 
 def all_builds_filter(request):
-    builder = request.GET.get('builder_name__name')
     status = request.GET.get('status')
     port_name = request.GET.get('port_name')
     page = request.GET.get('page')
+    builder_id = request.GET.get('builder_name')
+    try:
+        builder = Builder.objects.get(id=builder_id).name
+    except ValueError:
+        builder = "All Builders"
 
     if status == 'unresolved':
         all_latest_builds = BuildHistoryFilter({
-            'builder_name__name': builder,
+            'builder_name': builder_id,
             'port_name': port_name,
         }, queryset=BuildHistory.objects.filter().order_by('port_name', 'builder_name', '-build_id').distinct('port_name', 'builder_name')).qs
         builds = []

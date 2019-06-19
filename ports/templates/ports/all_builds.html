@@ -32,7 +32,7 @@
             <select class="form-control ml-2 filter" id="builder-filter" name="builder-filter">
                 <option value="">All</option>
                 {% for builder in builders %}
-                    <option value="{{ builder }}">{{ builder }}</option>
+                    <option value="{{ builder.id }}">{{ builder.name }}</option>
                 {% endfor %}
             </select>
         </div>
