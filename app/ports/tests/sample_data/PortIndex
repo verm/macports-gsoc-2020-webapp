@@ -1,0 +1,14 @@
+port-A1 397
+variants universal portdir categoryA/port-A1 depends_fetch bin:port-A4:port-A4 description {This is port A1 of categoryA} homepage http://portA1.website/ epoch 0 platforms darwin name port-A1 depends_lib {lib:pq:port-A2 port:port-A3-diff} license MIT maintainers {{email.com:user @user}} long_description {Just a test port written to test something.} categories categoryA version 1.0.0 revision 0
+port-A2 334
+variants universal portdir categoryA/port-A2 description {This is port A2 of categoryA and category B.} homepage http://portA1.website/ epoch 0 platforms darwin name port-A2 license MIT maintainers email.com:user long_description {Just a test port written to test something.} version 1.0.1 categories {categoryA categoryB} revision 0
+port-A3-diff 312
+variants universal portdir categoryA/port-A3-diff description {This is port-A3-diff of categoryA} homepage http://portA1.website/ epoch 0 platforms darwin name port-A3-diff license MIT maintainers @user long_description {Just a test port written to test something.} version 1.0.0 categories categoryA revision 0
+port-A4 351
+variants universal portdir categoryA/port-A4 depends_fetch bin:port-C1:port-C1 description {This is port A4 of categoryA} homepage http://portA1.website/ epoch 0 platforms darwin name port-A4 license MIT maintainers {{email.com:user2 @user}} long_description {Just a test port written to test something.} categories categoryA version 1.0.0 revision 0
+port-A5 325
+variants universal portdir categoryA/port-A5 description {This is port A1 of categoryA} depends_run {port:port-A1 port:port-A4} epoch 0 platforms darwin name port-A5 license MIT maintainers {{email.com:user @user2}} long_description {Just a test port written to test something.} version 1.0.0 categories categoryA revision 0
+port-B1 265
+variants universal portdir categoryB/port-B1 description {This is port B1 of categoryB} epoch 0 platforms darwin name port-B1 license MIT maintainers @user long_description {Just a test port written to test something.} version 1.0.0 categories categoryB revision 0
+port-C1 321
+variants universal portdir categoryC/port-C1 description {This is port C1 of categoryC} homepage http://portC1.website/ epoch 0 platforms darwin name port-C1 license MIT maintainers {{@user3 macports.org:user3}} long_description {Just a test port written to test something.} version 1.0.0 categories categoryC revision 0
