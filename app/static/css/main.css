@@ -12,7 +12,7 @@ body{
 
 .chart {
   width: 100% !important;
-  min-height: 300px !important;
+  min-height: 400px !important;
 }
 
 .tab-content > .tab-pane:not(.active),
