@@ -34,6 +34,7 @@ urlpatterns = [
     path('ports/category/<slug:cat>', views.categorylist, name='category_list'),
     path('ports/variant/<slug:variant>', views.variantlist, name='variant_list'),
     path('ports/all_builds/filter/', views.all_builds_filter, name='all_builds_filter'),
+    path('ports/all_builds/submit', views.builds_submit, name='builds_submit'),
     path('ports/all_builds/', views.all_builds_view, name='all_builds'),
     path('update/', views.update_api, name='update_api'),
     path('api/v1/', include('api_v1.urls')),

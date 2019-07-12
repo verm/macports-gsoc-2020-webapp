@@ -214,6 +214,16 @@ def all_builds_filter(request):
     })
 
 
+@csrf_exempt
+def builds_submit(request):
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        f = open('works.txt', 'w+', encoding='utf-8')
+        f.write(data)
+        f.close()
+        return HttpResponse('success')
+
+
 def stats(request):
     current_week = datetime.datetime.today().isocalendar()[1]
     all_submissions = Submission.objects.all()
