@@ -6,7 +6,7 @@ import shutil
 
 import django
 
-from ports.models import Commit
+from ports.models import LastPortIndexUpdate
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
@@ -49,8 +49,8 @@ def get_list_of_changed_ports(new_hash=False, old_hash=False, root=BASE_DIR):
             if old_hash is False:
                 try:
                     # Try to fetch the most recent hash from database
-                    old_hash_object = Commit.objects.all().order_by('-updated_at').first()
-                    old_hash = old_hash_object.hash
+                    old_hash_object = LastPortIndexUpdate.objects.all().first()
+                    old_hash = old_hash_object.git_commit_hash
                 except AttributeError:
                     # If database is empty, use the current HEAD
                     old_hash = subprocess.run(['git', 'rev-parse', 'HEAD'], stdout=subprocess.PIPE).stdout.decode(
@@ -75,8 +75,6 @@ def get_list_of_changed_ports(new_hash=False, old_hash=False, root=BASE_DIR):
                 if portname not in updated_ports:
                     updated_ports.append(portname)
 
-            # Add the new hash to the database
-            Commit.objects.create(hash=new_hash)
             os.chdir(BASE_DIR)
             return updated_ports
 
