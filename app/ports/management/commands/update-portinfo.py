@@ -26,7 +26,7 @@ class Command(BaseCommand):
 
         # If no argument is provided, use the commit-hash from JSON file:
         if options['new'] is False:
-            new_hash = data['commit']['info']
+            new_hash = data['info']['commit']
         # If argument is provided
         else:
             new_hash = options['new']
