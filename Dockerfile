@@ -12,6 +12,7 @@ RUN apt-get update && \
         python3-pip \
         nginx \
         cron \
+        rsync \
         supervisor && \
     pip3 install -U pip setuptools && \
     rm -rf /var/lib/apt/lists/*
@@ -31,6 +32,7 @@ COPY app/requirements.txt /code/app/
 RUN pip3 install -r /code/app/requirements.txt
 
 RUN touch /var/log/buildhistorycron.log
+RUN touch /var/log/updatecron.log
 
 # Setup cron
 COPY config/crons /etc/cron.d/crons
