@@ -20,8 +20,11 @@ class Command(BaseCommand):
             Port.load(data['ports'])
 
             # Write the commit hash into database
-            last_commit = LastPortIndexUpdate.objects.all().first()
-            last_commit.git_commit_hash = data['info']['commit']
-            last_commit.save()
+            if LastPortIndexUpdate.objects.count() > 0:
+                last_commit = LastPortIndexUpdate.objects.all().first()
+                last_commit.git_commit_hash = data['info']['commit']
+                last_commit.save()
+            else:
+                LastPortIndexUpdate.objects.create(git_commit_hash=data['info']['commit'])
 
             print("Successfully loaded the database.")

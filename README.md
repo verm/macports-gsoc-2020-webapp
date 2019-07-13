@@ -39,7 +39,7 @@ SECRET_KEY=
 ```
 docker run -d -p 80:80 --env-file=env --name=macports-webapp macports-webapp
 ```
-and visit `127.0.0.1:80` to see if everything looks fine. Sometimes, it make take 10-15 seconds for the site to display
+and visit `127.0.0.1:80` to see if everything looks fine. Sometimes, it may take 10-15 seconds for the site to display
 the layout properly because `migrations` and `collectstatic` commands are running in the background. There will not be any
 contents in the site because the database is empty, but it should load up nicely with empty sections.
 
@@ -49,7 +49,7 @@ contents in the site because the database is empty, but it should load up nicely
 docker exec macports-webapp python3 /code/app/manage.py load-rsync
 ```
 
-Now take a break. The process would start. Keep the command running until it exits. It can take upto 30 minutes. Some 
+At this point, take a break. The process to load initial data would start. Keep the command running until it exits. It can take upto 30 minutes. Some 
 warnings might popup regarding ports that have invalid dependencies which can be ignored.
 
 3. Start the cron jobs:
