@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = "Populates the database with Initial data after fetching portindex.json from rsync"
 
     def handle(self, *args, **options):
-        if not Port.objects.count > 0:
+        if not Port.objects.count() > 0:
             # Fetch from rsync
             rsync_operations.sync()
 
@@ -23,3 +23,5 @@ class Command(BaseCommand):
             last_commit = LastPortIndexUpdate.objects.all().first()
             last_commit.git_commit_hash = data['info']['commit']
             last_commit.save()
+
+            print("Successfully loaded the database.")
