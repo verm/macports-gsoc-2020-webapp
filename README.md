@@ -1,6 +1,6 @@
 # Running the App
-The repository contains Docker configuration which can be used out of the box, however, the app can be run without using
-the docker container. Both way are discussed below:
+The repository contains Docker configuration which can be used to build docker image, however, the app can be run without using
+the docker container. Both ways are discussed below:
 
 ## 1. Run inside Docker Container
 It is the recommended way, the Docker Image of the app is pre-configured to run the `migrations` and `collectstatic`.
