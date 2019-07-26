@@ -463,7 +463,7 @@ class Submission(models.Model):
             models.Index(fields=['os_version']),
             models.Index(fields=['os_arch']),
             models.Index(fields=['macports_version']),
-            models.Index(fields=['css_stdlib']),
+            models.Index(fields=['cxx_stdlib']),
         ]
 
     @classmethod
