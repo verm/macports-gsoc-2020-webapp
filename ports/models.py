@@ -483,7 +483,7 @@ class Submission(models.Model):
         sub.macports_version = json_object['os']['macports_version']
         sub.cxx_stdlib = json_object['os']['cxx_stdlib']
         sub.build_arch = json_object['os']['build_arch']
-        sub.platform = json_object['os']['platform']
+        sub.platform = json_object['os']['os_platform']
         sub.raw_json = json_object
         sub.timestamp = timestamp
         sub.save()
