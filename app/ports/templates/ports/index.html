@@ -2,6 +2,10 @@
 
 {% block title %}Ports |{% endblock %}
 
+{% block head_scripts %}
+    <script src="{% static 'js/ajax-search.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <br>
     <form onSubmit="clearTimeout(requestTimer); ajaxCallSearch(); return false" class="shadow-sm p-3 rounded">
