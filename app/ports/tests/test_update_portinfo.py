@@ -26,7 +26,7 @@ class TestUpdatePortinfo(TransactionTestCase):
 
         port_status = Port.objects.get(name='port-A1-subport').active
         for port in Port.objects.all():
-            print(port.name)
+            print(str(port.name) + ", " + str(port.active))
         self.assertEquals(port_status, False)
 
     def test_added_back(self):
