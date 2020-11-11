@@ -1,0 +1,132 @@
+body {
+    font-size: 1.1rem !important;
+}
+
+a.nav-link.menu {
+    border-radius: 10px;
+    transition: 0.3s;
+    color: white !important;
+}
+
+a.nav-link.menu:hover, a.nav-link.menu.active {
+    border-radius: 10px !important;
+    background-color: #063166 !important;
+    color: #FFFFFF !important;
+}
+
+.bg-pro {
+    background-color: #353A3F !important;
+}
+
+.btn-primary {
+    background-color: #1E79E9 !important;
+}
+
+.bg-prime {
+    background-color: #021b3a !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-primary {
+    border-color: #1E79E9 !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #1E79E9 !important;
+}
+
+.quick-input-search {
+    height: 50px !important;
+    font-size: 20px !important;
+    padding-right: 60px !important;
+    padding-left: 20px !important;
+}
+
+.quick-input-search-icon{
+    position: absolute !important;
+    right: 20px !important;
+    top: 5px !important;
+    max-width: 38px !important;
+    color: white !important;
+}
+
+.quick-input-search-spinner{
+    position: absolute !important;
+    right: 58px !important;
+    top: 5px !important;
+    max-width: 38px !important;
+    display: none;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; !important;}
+
+.tt-input:focus {
+    box-shadow: black;
+}
+
+.tt-input:hover, .tt-input:focus {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.search-result-item:hover {
+    background-color: whitesmoke !important;
+}
+
+.tt-menu {
+    margin-top: 4px !important;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19) !important;
+    border-radius: 4px;
+}
+
+.tt-cursor {
+    background-color: whitesmoke !important;
+}
+
+.tt-hint {
+    color: grey;
+}
+
+a.footer-links{
+    text-decoration: none;
+    color: #ddefff;
+}
+
+a.footer-links:hover{
+    color: white;
+}
+
+.bg-footer {
+    background-color: #353a3f !important;
+}
+
+.nav {
+    background-color: #353A3F !important;
+}
+
+.nav > li > a.nav-link {
+    color: #bebebe !important;
+}
+
+.nav > li > a.nav-link:hover {
+    color: white !important;
+}
+
+.nav > li > a.nav-link.active {
+    color: #FFFFFF !important;
+    background-color: #1A2229 !important;
+}
+
+.nav > li > a.nav-link {
+    border-radius: 0;
+}
+
+.jumbotron-custom {
+    background-color: #a2a4a5 !important;
+}
+
+@media (max-width: 800px) {
+    .display-4 {
+        font-size: 2.3rem !important;
+    }
+}

@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="jumbotron text-center mb-0">
+        <h1 class="display-4 font-weight-bold" style="max-width: 1080px; margin-left: auto; margin-right: auto">
+            Install MacPorts
+        </h1>
+        <p class="lead text-center" style="max-width: 700px; margin-left: auto; margin-right: auto">
+            We provide the command-line driven MacPorts software package under a <strong class="text-primary">3-Clause
+            BSD License</strong>, and through
+            it easy access to <strong class="text-primary">thousands of ports</strong> that greatly simplify the task of
+            compiling and installing open-source
+            software on your Mac.
+        </p>
+        <hr class="my-4">
+        <p id="download-instructions" class="font-weight-bold"></p>
+        <p class="lead">
+            <a class="btn btn-primary rounded-pill btn-lg" href="#" role="button">Download</a>
+            <a class="btn btn-outline-primary rounded-pill btn-lg" href="#" role="button">Available Ports</a>
+            <br>
+            <a href="#" class="btn btn-link text-secondary text-primary">More download options</a>
+        </p>
+    </div>
+    <div class="text-center bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form id="search-form" method="get" action="http://macports.silentfox.tech/search/">
+                        <div class="form-row">
+                            <div class="col-12" id="bloodhound">
+                                <input type="text" class="quick-input-search form-control rounded-pill typeahead" id="q"
+                                       name="q"
+                                       placeholder="Search for ports...">
+                                <img class="quick-input-search-spinner" id="search-spinner"
+                                     src="{% static 'images/tspinner.gif' %}">
+                                <button type="submit" class="quick-input-search-icon btn" id="search_submit"><i
+                                        class="fa fa-search"></i></button>
+                                <input type="hidden" value="on" name="name">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="font-weight-bold">What software is available?</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                <div class="card-header bg-primary">
+                    Announcements
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">MacPorts 2.6.3 is now available</li>
+                    <li class="list-group-item">GSoC 2020</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
